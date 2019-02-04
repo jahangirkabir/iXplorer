@@ -9,17 +9,19 @@
 import UIKit
 
 class Document: UIDocument {
-    
-    var userText: String? = ""
+    var fileData: Data?
+    var filesText: String?
     
     override func contents(forType typeName: String) throws -> Any {
         // Encode your document with an instance of NSData or NSFileWrapper
         
-        if let content = userText {
-            
-            let length =
-                content.lengthOfBytes(using: String.Encoding.utf8)
-            return NSData(bytes:content, length: length)
+        if typeName == "public.plain-text" {
+            if let content = filesText {
+                let data = content.data(using: .utf8)
+                return data!
+            } else {
+                return Data()
+            }
         } else {
             return Data()
         }
@@ -29,10 +31,22 @@ class Document: UIDocument {
     
     override func load(fromContents contents: Any, ofType typeName: String?) throws {
         // Load your document from contents
-        if let userContent = contents as? Data {
-            userText = NSString(bytes: (contents as AnyObject).bytes,
-                                length: userContent.count,
-                                encoding: String.Encoding.utf8.rawValue) as String?
+        if let fileType = typeName {
+        
+            if fileType == "public.png" || fileType == "public.jpeg" {
+                if let fileContents = contents as? Data {
+                    fileData = fileContents
+                }
+                
+            } else if fileType == "public.plain-text" {
+                if let fileContents = contents as? Data {
+                    filesText = String(data: fileContents, encoding: .utf8)
+                }
+                
+            } else {
+                print("File type unsupported.")
+            }
+            
         }
     }
 }

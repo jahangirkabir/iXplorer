@@ -14,39 +14,29 @@ class DocumentViewController: UIViewController {
     @IBOutlet weak var documentImage: UIImageView!
     @IBOutlet weak var documentNameLabel: UILabel!
     
-    var document: Document? //UIDocument?
+    var document: Document?
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Access the document
         document?.open(completionHandler: { (success) in
             if success {
-                // Display the content of the document, e.g.:
                 self.documentNameLabel.text = self.document?.fileURL.lastPathComponent
                 let pathString = self.document?.fileURL.lastPathComponent
                 print("file PATH : " + pathString!)
                 if self.document?.fileType == "public.png" || self.document?.fileType == "public.jpg" || self.document?.fileType == "public.jpeg" {
+                    
                     self.detailTextView.isHidden = true
-//                    self.documentImage.isHidden = false
+                    self.documentImage.isHidden = false
                     
                     self.documentImage.image = UIImage(data: (self.document?.fileData)!)
                 } else if self.document?.fileType == "public.plain-text" {
+                    
                     self.detailTextView.isHidden = false
                     self.documentImage.isHidden = true
+                    
                     self.detailTextView.text = self.document?.filesText!
                 }
-                
-//                let string = self.document?.fileURL.lastPathComponent
-//                if string!.contains(".txt"){
-//
-//                    self.documentText.text = self.document?.fileURL.!
-//                } else {
-//                    self.documentText.isHidden = false
-//                    self.documentImage.isHidden = true
-//
-//                    self.documentImage.image = UIImage(data: (self.document?.fileData)!)
-//                }
             } else {
                 // Make sure to handle the failed import appropriately, e.g., by presenting an error message to the user.
             }

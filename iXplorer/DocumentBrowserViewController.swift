@@ -46,7 +46,7 @@ class DocumentBrowserViewController: UIDocumentBrowserViewController, UIDocument
 //        let newDocumentURL: URL? = nil
         
         let newDocumentURL: URL? = Bundle.main.url(forResource:
-            "newDocument", withExtension: "txt")
+            "textTemplate", withExtension: "txt")
         
         if newDocumentURL != nil {
             importHandler(newDocumentURL, .copy)

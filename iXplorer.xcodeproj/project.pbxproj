@@ -16,6 +16,7 @@
 		4866C18422075E900010CC0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4866C18222075E900010CC0B /* LaunchScreen.storyboard */; };
 		4866C18F22075E900010CC0B /* iXplorerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4866C18E22075E900010CC0B /* iXplorerTests.swift */; };
 		4866C19A22075E900010CC0B /* iXplorerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4866C19922075E900010CC0B /* iXplorerUITests.swift */; };
+		4866C1E8220A92610010CC0B /* textTemplate.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4866C1E7220A92610010CC0B /* textTemplate.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		4866C19522075E900010CC0B /* iXplorerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iXplorerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4866C19922075E900010CC0B /* iXplorerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iXplorerUITests.swift; sourceTree = "<group>"; };
 		4866C19B22075E900010CC0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4866C1E7220A92610010CC0B /* textTemplate.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = textTemplate.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 		4866C16922075E900010CC0B = {
 			isa = PBXGroup;
 			children = (
+				4866C1E7220A92610010CC0B /* textTemplate.txt */,
 				4866C17422075E900010CC0B /* iXplorer */,
 				4866C18D22075E900010CC0B /* iXplorerTests */,
 				4866C19822075E900010CC0B /* iXplorerUITests */,
@@ -241,6 +244,7 @@
 				4866C18422075E900010CC0B /* LaunchScreen.storyboard in Resources */,
 				4866C18122075E900010CC0B /* Assets.xcassets in Resources */,
 				4866C17F22075E900010CC0B /* Main.storyboard in Resources */,
+				4866C1E8220A92610010CC0B /* textTemplate.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
